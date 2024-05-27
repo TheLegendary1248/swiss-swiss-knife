@@ -1,3 +1,6 @@
+/* *{
+    transition-duration: 0.4s;
+} */
 body{
     min-height: 100vh;
     padding: 0;
@@ -33,7 +36,7 @@ h1 {
         width: fit-content;
         height: fit-content;
         left: 0px;
-        top:.97em;
+        top:.965em;
         background-clip: text;
         z-index: 1;
     }
@@ -46,16 +49,34 @@ footer {
 }
 menu {
   display: flex;
-  list-style: none;
+  overflow-x: scroll;
+  overflow-y: visible;
+  
   padding: 0;
-  width: 400px;
-  /* background-color: #0001; */
-  /* border: 1px solid #000; */
+  margin: 0;
+  width: 100%;
+  height: 4em;
 }
-button {
-    border-radius: none;
+menu > button {
+    align-self: flex-end;
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: none;
-    background-color: attr(data-color color, red);
+    min-width: 100px;
+    bottom: 0px;
+    height: 2em;
+    font-size: 20px;
+    transition-property: bottom, height, color, background-color; 
+    transition-duration:  0.4s;
+    & > input {
+        display: none;
+    };
+    &:has(input:checked) {
+        height: 3em;
+        flex: 1, 1, 2;
+        background-color: var(--sel-bg-color, #333);
+        color: var(--sel-color, #fff);
+    }
 }
 #mini-app-container {
     background-color: #1111;
@@ -67,15 +88,49 @@ button {
         width: 100%;
         height: 100%;
         background-color: #000;
+        border: 3px solid var(--sel-bg-color);
     }
 }
 #perf-bar {
     font-family: monospace;
 }
+#framework-info {
+    background-color: var(--sel-bg-color, #333);
+    color: var(--sel-color, #fff);
+    /* padding: 8px;; */
+    position: relative;
+    height: 2em;
+    & > span {
+        margin: 10px;
+    }
+}
+#framework-link, #framework-repo {
+    font-family: monospace;
+    font-size: 20px;
+    right: 0px;
+    height: 100%;
+    border: none;
+    color: orangered;
+    width: 100px;
+    clip-path: polygon(20px 0, 100% 0, 100% 100%, 0% 100%);
+    transition-property: width, color, background-color;
+    transition-duration: 0.4s;
+    &:hover {
+        background-color: #000;
+        color: lime;
+    }
+}
+#framework-link {
+    position: relative;
+    color: #36c;
+    right: -25px;
+    padding-right: 20px;
+    width: max(120px, calc(1ch * var(--sel-url-char-count, 4px)));
+    &:hover {
+        background-color: #1f1f1f;
+        color: #c087f3;
+    }
+}
 li {
   flex-grow: 1;
-}
-
-button {
-  width: 100%;
 }

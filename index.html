@@ -1,6 +1,6 @@
 <html>
     <head>
-        <script src="src/index.jsx" type="module"></script>
+        <script src="src/index.js" type="module" defer></script>
         <link href="index.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,24 +17,63 @@
         <h2>A <span>handful</span> of mini-apps, written in <span>multitude</span> of frameworks</h2>
         
         <div id="mini-app-container">
-            <menu>
-                <div></div>
-                <button>React</button>
-                <button data-color="#2b3">Vue</button>
-                <button>Vanilla</button>
-                <button>VanJS</button>
-                <button>Preact</button>
-                <button>Alpine</button>
-            </menu>
-            <menu>
-                <div></div>
-                <button>Todo</button>
-                <button>Catalog</button>
-                <button>Snake</button>
-                <button>2048</button>
-                <button>About Me</button>
-                <button>Minesweeper</button>
-            </menu>
+            <div id="select-framework">
+                <menu>
+                    <button style="--sel-bg-color: #58c4dc">
+                        <input type="radio" id="select-fw-react" name="framework" value="react" />
+                        <label for="select-fw-react">React</label>
+                    </button>
+                    <button style="--sel-bg-color: #42b883">
+                        <input type="radio" id="select-fw-vue" name="framework" value="vue"/>
+                        <label for="select-fw-vue">Vue</label>
+                    </button>
+                    <button style="--sel-bg-color: #673ab8">
+                        <input type="radio" id="select-fw-preact" name="framework" value="preact"/>
+                        <label for="vue">Preact</label>
+                    </button>
+                    <button style="--sel-bg-color: #222">
+                        <input type="radio" id="select-fw-react" name="framework" value="vue"/>
+                        <label for="vue">Mithril</label>
+                    </button>
+                    <button style="--sel-bg-color: #0769ad">
+                        <input type="radio" name="framework" value="vue"/>
+                        <label for="vue">JQuery</label>
+                    </button>
+                    <button style="--sel-bg-color: #f0db4f; --sel-color: #323330">
+                        <input type="radio" name="framework" value="vue"/>
+                        <label for="vue">Vanilla</label>
+                    </button>
+                    <button style="--sel-bg-color: #f44336">
+                        <input type="radio" name="framework" value="vue"/>
+                        <label for="vue">VanJS</label>
+                    </button>
+                    <button style="--sel-bg-color: #cf2d20">
+                        <input type="radio" name="framework" value="vue"/>
+                        <label for="vue">Ember</label>
+                    </button>
+                    <button style="--sel-bg-color: #f73b00">
+                        <input type="radio" name="framework" value="vue"/>
+                        <label for="vue">Svelte</label>
+                    </button>
+                    <button style="--sel-bg-color: #77c1d2; --sel-color: #2d3441;">
+                        <input type="radio" name="framework" value="vue"/>
+                        <label for="vue">Alpine</label>
+                    </button>
+                    <button style="--sel-bg-color: #dd0031;">
+                        <input type="radio" name="framework" value="vue"/>
+                        <label for="vue">Angular</label>
+                    </button>
+                </menu>
+                <div id="framework-info">
+                    <span>Another goddamn framework</span>
+                    <em>- i'll fuckin do it again!</em>
+                    <div style="float: right;position:relative; height: 100%;">
+                        <button id="framework-link">www.<span>example.com</span></button>
+                        <button id="framework-repo">{/<span></span>}</button>
+                    </div>
+                
+                </div>
+            </div>
             <div class="content">
                 <noscript>
                     You do need scripts / js enable for this site to work

@@ -1,0 +1,66 @@
+hello world :Static
+about me page
+hello universe :Dynamic
+catalog
+node graph
+
+minesweeper :Game
+snake
+tic tac toe
+2048
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//GOAL

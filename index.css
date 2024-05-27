@@ -1,0 +1,81 @@
+body{
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    font-family: Tahoma;
+    background-color: #223;
+    color: #fff;
+}
+h1 {
+    text-align: center;
+    font-family: "Jaro";
+    font-size: 30vmin;
+    line-height: 0.7ch;
+    padding-top: .1em;
+    margin-bottom: .1em;
+    height: 2em;
+    width: 100%;
+    left: 0px;
+    z-index: 1;
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    background-color: #222;
+    color: #014;
+    pointer-events: none;
+    & span {
+        position: relative;
+    }
+    & .knife {
+        font-family: 'Danfo';
+        transform: translateX(-10%) scale(.8,-3) ;
+        color: #f337;
+        position: absolute;
+        width: fit-content;
+        height: fit-content;
+        left: 0px;
+        top:.97em;
+        background-clip: text;
+        z-index: 1;
+    }
+}
+footer {
+    background-color: #000;
+    color:#fff;
+    bottom: 0px;
+    position: relative;
+}
+menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  width: 400px;
+  /* background-color: #0001; */
+  /* border: 1px solid #000; */
+}
+button {
+    border-radius: none;
+    border: none;
+    background-color: attr(data-color color, red);
+}
+#mini-app-container {
+    background-color: #1111;
+    width: calc(100% - 40px);
+    left: 20px;
+    position: relative;
+    height: min(100vw, 80vh);
+    & div.content{
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+    }
+}
+#perf-bar {
+    font-family: monospace;
+}
+li {
+  flex-grow: 1;
+}
+
+button {
+  width: 100%;
+}

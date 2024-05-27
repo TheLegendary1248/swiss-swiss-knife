@@ -19,58 +19,63 @@
         <div id="mini-app-container">
             <div id="select-framework">
                 <menu>
-                    <button style="--sel-bg-color: #58c4dc">
-                        <input type="radio" id="select-fw-react" name="framework" value="react" />
+                    <button style="--sel-bg-color: #58c4dc;">
+                        <input type="radio" id="select-fw-react" name="framework" value="react"/>
                         <label for="select-fw-react">React</label>
                     </button>
-                    <button style="--sel-bg-color: #42b883">
+                    <button style="--sel-bg-color: #42b883;">
                         <input type="radio" id="select-fw-vue" name="framework" value="vue"/>
                         <label for="select-fw-vue">Vue</label>
                     </button>
-                    <button style="--sel-bg-color: #673ab8">
+                    <button style="--sel-bg-color: #673ab8;">
                         <input type="radio" id="select-fw-preact" name="framework" value="preact"/>
-                        <label for="vue">Preact</label>
+                        <label for="select-fw-preact">Preact</label>
                     </button>
-                    <button style="--sel-bg-color: #222">
-                        <input type="radio" id="select-fw-react" name="framework" value="vue"/>
-                        <label for="vue">Mithril</label>
+                    <button style="--sel-bg-color: #222;">
+                        <input type="radio" id="select-fw-mithril" name="framework" value="mithril"/>
+                        <label for="select-fw-mithril">Mithril</label>
                     </button>
-                    <button style="--sel-bg-color: #0769ad">
-                        <input type="radio" name="framework" value="vue"/>
-                        <label for="vue">JQuery</label>
+                    <button style="--sel-bg-color: #0769ad;">
+                        <input type="radio" id=" select-fw-jquery" name="framework" value="jquery"/>
+                        <label for="select-fw-jquery">JQuery</label>
                     </button>
                     <button style="--sel-bg-color: #f0db4f; --sel-color: #323330">
-                        <input type="radio" name="framework" value="vue"/>
-                        <label for="vue">Vanilla</label>
+                        <input type="radio" id="select-fw-vanilla" name="framework" value="vanilla"/>
+                        <label for="select-fw-vanilla">Vanilla</label>
                     </button>
-                    <button style="--sel-bg-color: #f44336">
-                        <input type="radio" name="framework" value="vue"/>
-                        <label for="vue">VanJS</label>
+                    <button style="--sel-bg-color: #f44336;">
+                        <input type="radio" id="select-fw-vanjs" name="framework" value="vanjs"/>
+                        <label for="select-fw-vanjs">VanJS</label>
                     </button>
-                    <button style="--sel-bg-color: #cf2d20">
-                        <input type="radio" name="framework" value="vue"/>
-                        <label for="vue">Ember</label>
+                    <button style="--sel-bg-color: #cf2d20;">
+                        <input type="radio" id="select-fw-ember" name="framework" value="ember"/>
+                        <label for="select-fw-ember">Ember</label>
                     </button>
-                    <button style="--sel-bg-color: #f73b00">
-                        <input type="radio" name="framework" value="vue"/>
-                        <label for="vue">Svelte</label>
+                    <button style="--sel-bg-color: #f73b00;">
+                        <input type="radio" id="select-fw-svelte" name="framework" value="svelte"/>
+                        <label for="select-fw-svelte">Svelte</label>
                     </button>
                     <button style="--sel-bg-color: #77c1d2; --sel-color: #2d3441;">
-                        <input type="radio" name="framework" value="vue"/>
-                        <label for="vue">Alpine</label>
+                        <input type="radio" id="select-fw-alpine" name="framework" value="alpine"/>
+                        <label for="select-fw-alpine">Alpine</label>
                     </button>
                     <button style="--sel-bg-color: #dd0031;">
-                        <input type="radio" name="framework" value="vue"/>
-                        <label for="vue">Angular</label>
+                        <input type="radio" id="select-fw-angular" name="framework" value="angular"/>
+                        <label for="select-fw-angular">Angular</label>
+                    </button>
+                    <button style="--sel-bg-color: #fc4f13;">
+                        <input type="radio" id="select-fw-html" name="framework" value="html"/>
+                        <label for="select-fw-html">HTML</label>
                     </button>
                 </menu>
                 <div id="framework-info">
-                    <span>Another goddamn framework</span>
-                    <em>- i'll fuckin do it again!</em>
+                    <span>No framework selected. You likely have scripts disabled</span>
                     <div style="float: right;position:relative; height: 100%;">
-                        <button id="framework-link">www.<span>example.com</span></button>
-                        <button id="framework-repo">{/<span></span>}</button>
+                        <!--Yes, I know, very bad. Sorry, but anchor elements refused to behave like buttons no matter how much CSS i shoved into them-->
+                        <button id="framework-link" onclick="console.log">https://<a></a></button>
+                        <button id="framework-repo">{/<a></a>}</button>
                     </div>
+                    <blockquote>- Motto</blockquote>
                 
                 </div>
             </div>

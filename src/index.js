@@ -2,74 +2,93 @@
 // import React from 'react';
 
 let appContainer = document.getElementById("mini-app-container")
+let frameworkLink = document.querySelector("#framework-link")
+let frameworkRepo = document.querySelector("#framework-repo")
 document
-.querySelectorAll("button")
+.querySelectorAll("#select-framework > menu > button")
 .forEach(e => e.onclick = () => 
     { 
         e.firstElementChild.checked = true
-        appContainer.style.cssText = e.style.cssText 
+        appContainer.style.cssText = e.style.cssText
+        let selectedFrameworkData = frameworkInfo[e.firstElementChild.value]
+        appContainer.style.setProperty('--sel-link-char-count', selectedFrameworkData.link.length)
+        let cutLink = selectedFrameworkData.link.replace(/https?:\/\//,"")
+        frameworkLink.lastElementChild.textContent = cutLink
+        appContainer.style.setProperty('--sel-repo-char-count', selectedFrameworkData.repo.length)
+        frameworkRepo.firstElementChild.textContent = selectedFrameworkData.repo
+
         console.log(e, appContainer.style, e.style)
     })
 let frameworkInfo = {
     "react": {
         desc: "A framework by Facebook",
-        url: "The library for web and native user interfaces",
-        repo: "https://react.dev/"
+        motto: "The library for web and native user interfaces",
+        link: "https://react.dev/",
+        repo: "https://github.com/facebook/react"
+    },
+    "jquery": {
+        desc: "A framework by Facebook",
+        motto: "Write less, do more",
+        link: "https://jquery.com/",
+        repo: "https://github.com/jquery/jquery"
+    },
+    "html": {
+        desc: "A framework by Facebook",
+        motto: "Write less, do more",
+        link: "https://html.spec.whatwg.org/",
+        repo: "https://github.com/whatwg/html"
+    },
+    "angular": {
+        desc: "A framework by Facebook",
+        motto: "Write less, do more",
+        link: "https://angular.dev/",
+        repo: "https://github.com/angular/angular"
     },
     "vue": {
         desc: "A framework by Facebook",
-        motto: "",
-        url: "",
-        repo: ""
+        motto: "The Progressive JavaScript Framework",
+        link: "https://vuejs.org/",
+        repo: "https://github.com/vuejs/core"
     },
     "preact": {
         desc: "A react copy cat with a strict package size",
         motto: "Fast 3kB alternative to React with the same modern API",
-        url: "https://preactjs.com/",
-        repo: ""
+        link: "https://preactjs.com/",
+        repo: "https://github.com/preactjs/preact"
     },
     "svelte": {
         desc: "A framework by Facebook",
         motto: "Cybernetically enhanced web apps",
-        url: "https://svelte.dev/",
-        repo: ""
+        link: "https://svelte.dev/",
+        repo: "https://github.com/sveltejs/svelte"
     },
     "mithril": {
         desc: "A framework by Facebook",
-        url: "https://mithril.js.org/",
+        link: "https://mithril.js.org/",
         repo: "https://github.com/MithrilJS/mithril.js"
     },
     "ember": {
         desc: "A framework by Facebook",
         motto: "A framework for ambitious web developers",
-        url: "https://emberjs.com/",
-        repo: ""
+        link: "https://emberjs.com/",
+        repo: "https://github.com/emberjs/ember.js"
     },
     "vanilla": {
         desc: "A messy, multiple personality language that was soo accessible, it had an abundance of offspring, which is why you, I and we are here",
-        url: "http://vanilla-js.com/",
+        link: "http://vanilla-js.com/",
         repo: "https://chromium.googlesource.com/v8/v8.git"
     },
     "alpine": {
         desc: "A framework by Facebook",
         motto: "Your new, lightweight, JavaScript framework",
-        url: "https://alpinejs.dev/",
+        link: "https://alpinejs.dev/",
         repo: "https://github.com/alpinejs/alpine"
     },
-    "react": {
+    "vanjs": {
         desc: "A framework by Facebook",
-        url: "",
-        repo: ""
-    },
-    "react": {
-        desc: "A framework by Facebook",
-        url: "",
-        repo: ""
-    },
-    "react": {
-        desc: "A framework by Facebook",
-        url: "",
-        repo: ""
+        motto: "A 1.0kB Grab 'n Go Reactive UI Framework without React/JSX",
+        link: "https://vanjs.org/",
+        repo: "https://github.com/vanjs-org/van"
     },
 }
 // Clear the existing HTML content

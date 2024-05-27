@@ -68,9 +68,13 @@ menu > button {
     font-size: 20px;
     transition-property: bottom, height, color, background-color; 
     transition-duration:  0.4s;
+    background-color: #fff;
     & > input {
         display: none;
     };
+    &:focus, &:hover {
+        background-color: #ccc;
+    }
     &:has(input:checked) {
         height: 3em;
         flex: 1, 1, 2;
@@ -105,32 +109,64 @@ menu > button {
     }
 }
 #framework-link, #framework-repo {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    background-color: #eef;
     font-family: monospace;
+    overflow-y: hidden;
+    white-space: nowrap;
     font-size: 20px;
     right: 0px;
     height: 100%;
     border: none;
     color: orangered;
     width: 100px;
-    clip-path: polygon(20px 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 0% 100%);
     transition-property: width, color, background-color;
     transition-duration: 0.4s;
-    &:hover {
+    &:hover, &:focus {
+        width: max(120px, calc(1.2ch * var(--sel-link-char-count, 8ch)));
         background-color: #000;
         color: lime;
+        & > a {
+            width: calc((1ch * var(--sel-link-char-count)) - 8ch);
+        }
+    }
+    & > a {
+        display: inline-block;
+        vertical-align: sub;
+        position: relative;
+        overflow-x: hidden;
+        width: 0%;
+        transition: width 0.4s;
     }
 }
 #framework-link {
-    position: relative;
+    background-color: #fff;
     color: #36c;
-    right: -25px;
-    padding-right: 20px;
-    width: max(120px, calc(1ch * var(--sel-url-char-count, 4px)));
-    &:hover {
+    right: -15px;
+    padding-right: 9px;
+    width: 140px;
+    &:hover, &:focus {
+        width: max(120px, calc(1.2ch * var(--sel-link-char-count, 8ch)));
         background-color: #1f1f1f;
         color: #c087f3;
+        & > a {
+            width: calc((1ch * var(--sel-link-char-count)) - 8ch);
+        }
+    }
+    & > a {
+        display: inline-block;
+        vertical-align: sub;
+        position: relative;
+        overflow-x: hidden;
+        width: 0%;
+        transition: width 0.4s;
     }
 }
-li {
-  flex-grow: 1;
+blockquote {
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
 }

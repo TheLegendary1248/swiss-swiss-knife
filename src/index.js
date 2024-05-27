@@ -4,6 +4,9 @@
 let appContainer = document.getElementById("mini-app-container")
 let frameworkLink = document.querySelector("#framework-link")
 let frameworkRepo = document.querySelector("#framework-repo")
+function switchSelectedFramework() {
+    
+}
 document
 .querySelectorAll("#select-framework > menu > button")
 .forEach(e => e.onclick = () => 
@@ -91,6 +94,9 @@ let frameworkInfo = {
         repo: "https://github.com/vanjs-org/van"
     },
 }
+//Grab source folder for each framework
+//There should be a singular script for getting each mini-app
+
 // Clear the existing HTML content
 // document.body.innerHTML = '<div id="app"></div>';
 console.log("hello world")

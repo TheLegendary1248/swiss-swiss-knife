@@ -8,6 +8,7 @@
         <title>Swiss-Swiss-Knife</title>
     </head>
     <body>
+        <style>h2 { color: red; }</style>
         <h1 id="first-header">
             <span style="z-index: 2;">Swiss-</span>
             <br><span><span style="z-index: 2;">Swiss-</span>
@@ -69,19 +70,21 @@
                     </button>
                 </menu>
                 <div id="framework-info">
-                    <span>No framework selected. You likely have scripts disabled</span>
-                    <div style="float: right;position:relative; height: 100%;">
-                        <!--Yes, I know, very bad. Sorry, but anchor elements refused to behave like buttons no matter how much CSS i shoved into them-->
-                        <button id="framework-link" onclick="console.log">https://<a></a></button>
-                        <button id="framework-repo">{/<a></a>}</button>
+                    <div>
+                        <span>No framework selected. You likely have scripts disabled. </span>
+                        <blockquote>- Motto</blockquote>
                     </div>
-                    <blockquote>- Motto</blockquote>
+                    <div style="float: inline-end;position:relative; height: 100%; width: fit-content;">
+                        <!--Yes, I know, very bad. Sorry, but anchor elements refused to behave like buttons no matter how much CSS i shoved into them-->
+                        <button type="button" id="framework-link" onclick="console.log">https://<a></a></button>
+                        <button type="button" id="framework-repo">{/<a></a>}</button>
+                    </div>
                 
                 </div>
             </div>
             <div class="content">
                 <noscript>
-                    You do need scripts / js enable for this site to work
+                    You do need scripts / js enabled for this site to work
                 </noscript>
                 <div></div>
             </div>
@@ -96,6 +99,10 @@
         <section>
             <h3>What is this?</h3>
             Didn't the <a href="#first-header">first header</a> tell you?
+        </section>
+        <section>
+            <h3>Does each mini-app share resources with one another?</h3>
+            Absolutely not. Each is completely self contained
         </section>
         <section>
             <h3>Oh cool! So I can pick use this to pick to the best framework?</h3>

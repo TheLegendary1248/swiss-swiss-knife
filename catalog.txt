@@ -1,7 +1,8 @@
-hello world :Static
+hello world :Static //A simple hello world document
 about me page
 
 hello universe :Dynamic
+counter //A button that counts up with every click
 catalog
 node graph
 

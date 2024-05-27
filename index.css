@@ -62,11 +62,12 @@ menu > button {
     position: relative;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: none;
-    min-width: 100px;
+    flex: 1 100px;
+    min-width: 120px;
     bottom: 0px;
     height: 2em;
     font-size: 20px;
-    transition-property: bottom, height, color, background-color; 
+    transition-property: bottom, height, color, background-color, width; 
     transition-duration:  0.4s;
     background-color: #fff;
     & > input {
@@ -76,8 +77,8 @@ menu > button {
         background-color: #ccc;
     }
     &:has(input:checked) {
+        flex-grow: 1.5;
         height: 3em;
-        flex: 1, 1, 2;
         background-color: var(--sel-bg-color, #333);
         color: var(--sel-color, #fff);
     }
@@ -99,11 +100,13 @@ menu > button {
     font-family: monospace;
 }
 #framework-info {
+    display: flex;
     background-color: var(--sel-bg-color, #333);
     color: var(--sel-color, #fff);
     /* padding: 8px;; */
     position: relative;
     height: 2em;
+    transition: background-color 0.4s, color 0.4s;
     & > span {
         margin: 10px;
     }

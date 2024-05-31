@@ -11,6 +11,7 @@ document
 .querySelectorAll("#select-framework > menu > button")
 .forEach(e => e.onclick = () => 
     { 
+        //TODO: Probably replace those links and add a no-script 
         e.firstElementChild.checked = true
         appContainer.style.cssText = e.style.cssText
         let selectedFrameworkData = frameworkInfo[e.firstElementChild.value]
@@ -19,9 +20,10 @@ document
         frameworkLink.lastElementChild.textContent = cutLink
         appContainer.style.setProperty('--sel-repo-char-count', selectedFrameworkData.repo.length)
         frameworkRepo.firstElementChild.textContent = selectedFrameworkData.repo
-
-        console.log(e, appContainer.style, e.style)
     })
+/** @type {HTMLIFrameElement} */
+const iframe = document.getElementById("iframe");
+iframe.contentWindow.helloworld = () => {alert('hey this works')}
 let frameworkInfo = {
     "react": {
         desc: "A framework by Facebook",

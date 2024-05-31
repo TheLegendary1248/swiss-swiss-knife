@@ -1,65 +1,35 @@
-hello world :Static //A simple hello world document
+hello world     :Static     //A simple hello world document
 about me page
-
-hello universe :Dynamic
-counter //A button that counts up with every click
+documentation
+article
+hello universe  :Dynamic
+counter                     //A button that counts up with every click!
 catalog
 node graph
-
-minesweeper :Game
+calculator                  //A calculator app that simulates a real pocket calculator!
+autocompleter
+infinite scroller
+minesweeper     :Game
 snake
 tic tac toe
 2048
 simon says
 chess
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+fruit ninja
+osu
+bullet hell
+scorched earth
+solitaire
+flappy bird
+word search
+SPA             :Serious
+paint app                   //MS Paint!
+goodmorning
+recursive stopwatch         //A timer that allows you to start new stopwatches within the current running one 
 
 
 
 
 
 //GOAL
+sudoku          :Removed Considerations //Soduko is plenty more complicated than I anticipated

@@ -1,3 +1,3 @@
 <div id="mini-app">
-    <button onclick="let target = event.target; let count = target.getAttribute('data-count'); target.textContent = `This button has been clicked ${++count} times!`; target.setAttribute('data-count',count)" data-count="0">This button has been clicked 0 times!</button>
+    <button onclick="let target = event.target; let count = target.getAttribute('data-count'); target.textContent = count == 1247 ? `(&bnot;&#x25A0;_&#x25A0;)&ang;\&quot;you have some patience being here&quot;` : `This button has been clicked ${++count} times!`; target.setAttribute('data-count',count); window.helloworld()" data-count="0">This button has been clicked 0 times!</button>
 </div>

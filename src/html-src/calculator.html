@@ -1,0 +1,199 @@
+<div class="mini-app">
+<style>
+.miniapp {
+
+}
+.container {
+    border-radius: 10px;
+    background: #463e3c;
+    border: 8px outset #3e3a36;
+    padding: 10px;
+    position: relative;
+    max-width: 450px;
+    &:has(.solar:hover){
+        & .display {
+            transition-duration: 10s;
+            color: #0000;
+        }
+    }
+}
+.buttons {
+    display: grid;
+    height: 50%;
+    overflow: scroll;
+    grid-auto-columns: 1fr;
+    gap: 14px;
+    padding: 4px;
+}
+button {
+    color: #eee;
+    border-radius: 8px;
+    position: relative;
+    border: 4px outset #0005;
+    transition-property: box-shadow, border, bottom, right;
+    transition-duration: 0.15s;
+    box-shadow: 3px 3px 0px #0008;
+    font-size: 24px;
+    font-weight: 900;
+    background-color: #463e3c;
+    &.row-1 {grid-row: 1;}
+    &.row-2 {grid-row: 2;}
+    &.row-3 {grid-row: 3;}
+    &.row-4 {grid-row: 4;}
+    &.row-5 {grid-row: 5;}
+    &.row-6 {grid-row: 6;}
+    &.col-1 {grid-column: 1;}
+    &.col-2 {grid-column: 2;}    
+    &.col-3 {grid-column: 3;}
+    &.col-4 {grid-column: 4;}
+    &.fatplus {grid-row: 5 / span 2;}
+    &.clear {grid-column: 1/ span 2;}
+    &.num { border-color: #bbb;}
+    &:active {
+        border: 4px inset #888;
+        box-shadow: none;
+        bottom: -2px;
+        right: -2px;
+    }
+    
+}
+.brand {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+.solar {
+    position: relative;
+    height: 1em;
+    border-radius: 8px;
+    background-color: #301700;
+    flex-grow: 1;
+    bottom: 0.2em;
+    flex-basis: 250px;
+    flex-shrink: 0;
+    align-self: flex-end;
+    vertical-align: super;
+    background: repeating-linear-gradient(0.25turn, #301700, #301700 50px, #753f0d 50px, #753f0d 55px);
+}
+.top-space {
+    overflow: hidden;
+    column-gap: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    position: relative;
+    justify-content: space-between;
+
+}
+.display {
+    height: 100px;
+    width: 100%;
+    background-color: #cbd5be;
+    border: 8px inset #999f;
+    box-sizing: border-box;
+    transition-duration: 1s;
+    transition-property: color;
+    font-family: monospace;
+    font-size: 50px;
+}
+</style>
+    <div class="container">
+        <div class="top-space">
+            <div class="brand">CALCULATOR-9000</div>
+            <div class="solar" onmouseover="let appBase = event.target.appBase; appBase.drainCallbackInterval = setTimeout(() => {appBase.init()},10_000)" onmouseleave="clearTimeout(event.target.appBase.drainCallbackInterval)" ></div>
+        </div>
+        <div class="display">
+
+        </div>
+        <!--Call it cheating the system. I dare you-->
+        <div class="buttons" onclick="event.target.appBase.renderDisplay();">
+            <button class="row-6 col-1 num" onclick="event.target.appBase.word += '0'">0</button>
+            <button class="row-5 col-1 num" onclick="event.target.appBase.word += '1'">1</button>
+            <button class="row-5 col-2 num" onclick="event.target.appBase.word += '2'">2</button>
+            <button class="row-5 col-3 num" onclick="event.target.appBase.word += '3'">3</button>
+            <button class="row-4 col-1 num" onclick="event.target.appBase.word += '4'">4</button>
+            <button class="row-4 col-2 num" onclick="event.target.appBase.word += '5'">5</button>
+            <button class="row-4 col-3 num" onclick="event.target.appBase.word += '6'">6</button>
+            <button class="row-3 col-1 num" onclick="event.target.appBase.word += '7'">7</button>
+            <button class="row-3 col-2 num" onclick="event.target.appBase.word += '8'">8</button>
+            <button class="row-3 col-3 num" onclick="event.target.appBase.word += '9'">9</button>
+            <button class="col-4 fatplus" onclick="event.target.appBase.opFunc('+')">+</button>
+            <button class="row-4 col-4" onclick="event.target.appBase.opFunc('-')">-</button>
+            <button class="row-2 col-4" onclick="event.target.appBase.opFunc('/')">&div;</button>
+            <button class="row-3 col-4" onclick="event.target.appBase.opFunc('*')">&times;</button>
+            <button class="row-6 col-3" style="border-color: #487;color: #3fb;" onclick="event.target.appBase.calculate()">=</button>
+            <button class="row-6 col-2 num" onclick="let appBase = event.target.appBase; if(!appBase.hasDecimal){appBase.word += '.';appBase.hasDecimal = true;}">.</button>
+            <button class="row-2 col-1" onclick="let appBase = event.target.appBase; appBase.word = appBase.memory;">MRC</button>
+            <button class="row-2 col-2" onclick="let appBase = event.target.appBase; appBase.memory -= parseFloat(appBase.word)">M-</button>
+            <button class="row-2 col-3" onclick="let appBase = event.target.appBase; appBase.memory += parseFloat(appBase.word)">M+</button>
+            <button class="" onclick="event.target.appBase.opFunc('sqrt')">&Sqrt;</button>
+            <button class="" onclick="event.target.appBase.opFunc('%')">%</button>
+            <button class="row-1 clear" onclick="event.target.appBase.word = ''">CLEAR</button>
+        </div>
+    </div>
+<script>
+(function () {
+    Array.from(document.getElementsByTagName('*')).forEach(e => e.appBase = document.currentScript.parentElement)
+    /** @type {HTMLDivElement} */
+    let appBase = document.currentScript.parentElement
+    appBase.display = appBase.getElementsByClassName('display')[0];
+    appBase.renderDisplay = function() 
+    {   
+        appBase.display.textContent = appBase.showRegister ? appBase.prevWord : appBase.word.toString()
+        appBase.showRegister = false
+    }
+    //Initializer
+    appBase.init = function(){ 
+        appBase.word = ""
+        appBase.prevWord = ""
+        appBase.hasDecimal = false
+        appBase.showRegister = false
+        appBase.op = ""
+        appBase.memory = 0
+        appBase.renderDisplay()}
+    appBase.init();
+    //
+    appBase.opFunc = function(op) {
+        if(appBase.prevWord != "") {
+            appBase.calculate()
+        }
+        else {
+            appBase.prevWord = appBase.word
+            appBase.word = ""
+            appBase.showRegister = true
+        }
+        appBase.op = op
+    }
+    //Calculate what we have, if, we can
+    appBase.calculate = function() {
+        let opFunc
+        switch (appBase.op) {
+            case "+":
+                opFunc = (a,b) => a + b 
+                break;
+            case "-":
+                opFunc = (a,b) => a - b 
+                break;
+            case "*":
+                opFunc = (a,b) => a * b 
+                break;
+            case "/":
+                opFunc = (a,b) => a / b 
+                break;
+            case "%":
+                opFunc = (a,b) => a % b 
+                break;
+            case "sqrt":
+                opFunc = (a,b) => a + b 
+                break;
+            default:
+                throw Error("This is a not a real function. How did you hit this?")
+                break;
+        }
+        appBase.prevWord = opFunc(parseFloat(appBase.prevWord), parseFloat(appBase.word))
+        appBase.showRegister = true
+    }
+    window.temp = appBase
+})();
+</script>
+</div>

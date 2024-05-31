@@ -1,0 +1,91 @@
+<div class="mini-app">
+    <style>
+        .item:nth-of-type(4n+1):not(.delete) {background-color: #598CD990;}
+        .item:nth-of-type(4n+2):not(.delete) {background-color: #FFA63090;}
+        .item:nth-of-type(4n+3):not(.delete) {background-color: #21FA9090;}
+        .item:nth-of-type(4n+4):not(.delete) {background-color: #C95D6390;}
+        /* .item:nth-of-type(4n+4) {background-color: #99f3;} */
+        .mini-app  *{
+            font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .mini-app {
+            padding: 10px;
+        }
+        .item {
+            position: relative;
+            /* background-color: #99f3; */
+            border-radius: 8px;
+            padding: 5px;
+            margin: 5px 0px;
+            transition: background-color 500ms, height 500ms;
+            animation: comeIn 1s forwards;
+            overflow: hidden;
+            & button {
+                border: none;
+                border-radius: 0.5em;
+                transition: width 0.5s;
+                color: white;
+                background-color: black;
+                display: inline-block;
+                position: absolute;
+                right: 0px;
+                height: 80%;
+                top: 10%;
+                transform: translateX(-10%);
+                aspect-ratio: 1 / 1;
+                &:hover {
+                    width: 100px;
+                    aspect-ratio: none;
+                }
+                & div {
+                    pointer-events: none;
+                    font-weight: 900;
+                }
+            }
+            &.delete {
+                height: 0px !important;
+                animation: slideOut 500ms forwards;
+            }
+        }
+        
+        @keyframes comeIn {
+            to { width: 100%;}
+            from { width: 0%;}
+
+        }
+        @keyframes slideOut {
+            to { left: 100%; }
+            from {left: 0%; }
+        }
+    </style>
+    <div class="todo">
+        <div class="create-field">
+            <input type="text">
+            <button onclick="
+            /** @type {HTMLButtonElement} */
+            let t = event.target; 
+            let template = t.closest('.mini-app').querySelector('template').content.firstElementChild.cloneNode(true)
+            console.log(template)
+            template.querySelector('span').textContent = t.previousElementSibling.value
+            t.closest('.todo').lastElementChild.before(template)
+            ">
+                Add item
+            </button>
+        </div>
+    </div>
+    <template>
+        <div class="item">
+            <span contenteditable></span>
+            <button onclick="
+            let t = event.target; 
+            t.parentElement.style.height = `${t.parentElement.scrollHeight}px`
+            console.log(t.parentElement.scrollHeight)
+            setTimeout(() => t.parentElement.classList.add('delete'))
+            setTimeout(() => t.parentElement.remove(),500)
+            ">
+                <div>&times;</div>
+            </button>
+        </div>
+    </template>
+</div>

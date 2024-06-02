@@ -62,6 +62,7 @@ menu {
 iframe {
     width: 100%;
     height: 100%;
+    background-color: #fff;
 }
 menu > button {
     /* clip-path: polygon(0 20px, 20px 0, 100% 0, 100% 100%, 0 100%); */

@@ -21,7 +21,7 @@
             transition: background-color 500ms, height 500ms;
             animation: comeIn 1s forwards;
             overflow: hidden;
-            & button {
+            & > button {
                 border: none;
                 border-radius: 0.5em;
                 transition: width 0.5s;
@@ -30,15 +30,16 @@
                 display: inline-block;
                 position: absolute;
                 right: 0px;
-                height: 80%;
+                height: calc(100% - 20px);
+                margin: 5px;
+                width: 30px;
                 top: 10%;
                 transform: translateX(-10%);
-                aspect-ratio: 1 / 1;
                 &:hover {
                     width: 100px;
                     aspect-ratio: none;
                 }
-                & div {
+                & > div {
                     pointer-events: none;
                     font-weight: 900;
                 }
@@ -50,7 +51,7 @@
         }
         
         @keyframes comeIn {
-            to { width: 100%;}
+            to { width: calc(100% - 40px);}
             from { width: 0%;}
 
         }
@@ -68,14 +69,16 @@
             let template = t.closest('.mini-app').querySelector('template').content.firstElementChild.cloneNode(true)
             console.log(template)
             template.querySelector('span').textContent = t.previousElementSibling.value
+            let createfield = t.closest('.create-field').cloneNode(true)
             t.closest('.todo').lastElementChild.before(template)
+            template.appendChild(createfield)
             ">
                 Add item
             </button>
         </div>
     </div>
     <template>
-        <div class="item">
+        <div class="todo item">
             <span contenteditable></span>
             <button onclick="
             let t = event.target; 

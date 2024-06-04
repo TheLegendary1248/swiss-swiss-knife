@@ -1,15 +1,19 @@
-/* *{
-    transition-duration: 0.4s;
-} */
 body{
     min-height: 100vh;
     padding: 0;
     margin: 0;
     position: absolute;
     font-family: Tahoma;
-    background-color: #223;
+    background-color: #112;
     color: #fff;
     width: 100%;
+}
+nav {
+    position: sticky;
+    top: 0px;
+    height: 30px;
+    background-color: #000;
+    z-index: 9999;
 }
 h1 {
     text-align: center;
@@ -43,28 +47,73 @@ h1 {
         z-index: 1;
     }
 }
-footer {
-    background-color: #000;
-    color:#fff;
-    bottom: 0px;
+h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 10vh;
+    margin: 20vh 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#no-script-prompt {
+    position: fixed;
+    display: block;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: #111;
+    font-family: monospace;
+    font-size: 1rem;
+    padding: 10px;
+    border: 4px solid #ccc;
+    & span:first-of-type {
+        color: lime;
+    }
+    & span:last-of-type {
+        background-color: yellow;
+        color: #000;
+    }
+    & label {
+        font-family: unset;
+        float: right;
+        width: calc(100% - 4px);
+        text-align: center;
+        background-color: lime;
+        color: #000;
+        padding: 2px;
+        &:hover {
+            background-color: white;
+        }
+    }
+    & input {
+        display: none;
+    }
+    &:has(input:checked) {
+        display: none;
+    }
+}
+#mini-app-container {
+    background-color: #1111;
+    width: calc(100% - 40px);
+    left: 20px;
     position: relative;
+    & div.content{
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        border: 3px solid var(--sel-bg-color);
+    }
 }
-menu {
-  display: flex;
-  overflow-x: scroll;
-  overflow-y: visible;
-  
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 4em;
-}
-iframe {
+menu.framework {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: visible;
+    
+    padding: 0;
+    margin: 0;
     width: 100%;
-    height: 100%;
-    background-color: #fff;
+    height: 4em;
 }
-menu > button {
+menu.framework > button {
     /* clip-path: polygon(0 20px, 20px 0, 100% 0, 100% 100%, 0 100%); */
     align-self: flex-end;
     position: relative;
@@ -92,31 +141,6 @@ menu > button {
         background-color: var(--sel-bg-color, #333);
         color: var(--sel-color, #fff);
     }
-    /* &::after{
-        width: 4px;
-        height: 100%;
-        background-color: #000;
-        position: absolute;
-        right: -4px;
-        top:4px;
-        content: '';
-    } */
-}
-#mini-app-container {
-    background-color: #1111;
-    width: calc(100% - 40px);
-    left: 20px;
-    position: relative;
-    height: min(100vw, 80vh);
-    & div.content{
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        border: 3px solid var(--sel-bg-color);
-    }
-}
-#perf-bar {
-    font-family: monospace;
 }
 #framework-info {
     display: flex;
@@ -129,6 +153,11 @@ menu > button {
     & > span {
         margin: 10px;
     }
+}
+blockquote {
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
 }
 #framework-link, #framework-repo {
     box-sizing: border-box;
@@ -187,8 +216,57 @@ menu > button {
         transition: width 0.4s;
     }
 }
-blockquote {
-    font-style: italic;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+menu.app {
+    position: relative;
+    width: 100%;
+    padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+    height: 100%;
+    max-height: 100%;
+    background-color: #0008;
+    & button {
+        font-size: large;
+        min-height: 12em;
+    }
+    & div {
+        
+    }
+}
+.app-div {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    & .clip-menu {
+        overflow: auto;
+        min-width: 200px;
+        flex-grow: 1;
+        /* flex-shrink: 1; */
+        
+    }
+}
+#hidden-meow {
+    position: absolute;
+    bottom: 0px;
+}
+iframe {
+    background-color: #fff;
+    height: 90vh;
+    width: 100%;
+}
+#perf-bar {
+    font-family: monospace;
+}
+.mostly-text {
+    padding: 20px;
+}
+footer {
+    background-color: #000;
+    color:#fff;
+    bottom: 0px;
+    position: relative;
 }

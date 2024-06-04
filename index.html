@@ -8,14 +8,20 @@
         <title>Swiss-Swiss-Knife</title>
     </head>
     <body>
-        <style>h2 { color: red; }</style>
-        <h1 id="first-header">
+        <nav>NAVBAR</nav>
+        <div id="dope-intro">
+            <span></span>
+
+        </div>
+        <!-- <h1 id="first-header">
             <span style="z-index: 2;">Swiss-</span>
             <br><span><span style="z-index: 2;">Swiss-</span>
             <span class="knife">Knife</span>
             </span>
-        </h1>
-        <h2>A <span>handful</span> of mini-apps, written in <span>multitude</span> of frameworks</h2>
+        </h1> -->
+        <h2>
+            <span>A <span class="fixed">handful</span> of mini-apps</span>,<br>
+            <span>written in a<span class="fixed" style="visibility: hidden;">handful</span> of frameworks</span></h2>
         <noscript>
             <p>React <a href="">Website</a> <a>Repo</a></p>
             <p>Vue <a href="" >Website</a> <a>Repo</a></p>
@@ -30,9 +36,23 @@
             <p>VanJS <a href="" >Website</a> <a>Repo</a></p>
             <p>Alpine <a href="" >Website</a> <a>Repo</a></p>
         </noscript>
+        <noscript id="no-script-prompt">
+            <span>[tl1248@arch swiss-swiss-knife]$</span> neofetch
+            <br>
+            It's cool to not use scripts, but this a website that literally uses them to display demos of different frameworks in different.
+            <br>
+            There's even a few easter eggs, like this one, sprinkled in!
+            <br><br>
+            <span>NOTE:</span> this message does not go away permanently as it is using a CSS trick to remove itself
+            <br>
+            <label>
+                OK
+                <input id="no-script-button" type="radio"/>
+            </label>
+        </noscript>
         <div id="mini-app-container">
             <div id="select-framework">
-                <menu>
+                <menu class="framework">
                     <button style="--sel-bg-color: #58c4dc;">
                         <input type="radio" id="select-fw-react" name="framework" value="react"/>
                         <label for="select-fw-react">React</label>
@@ -95,41 +115,63 @@
                 
                 </div>
             </div>
-            <div class="content">
-                <iframe id="iframe" src="src/html-src/calculator.html">
-
-                </iframe>
-                <div id="perf-bar">
-                Performance Bar
-                    <div id="colors"></div>
+            <div class="app-div">
+                <div class="clip-menu">
+                    <menu class="app">
+                        <div style="background-color: #f0db4f;">Static</div>
+                        <button style="--sel-bg-color: #fc4f13;">
+                            <input type="radio" id="select-fw-html" name="framework" value="html"/>
+                            <label for="select-fw-html">About Me</label>
+                        </button>
+                        <div>Dynamic</div>
+                        <button style="--sel-bg-color: #fc4f13;">
+                            <input type="radio" id="select-fw-html" name="framework" value="html"/>
+                            <label for="select-fw-html">Counter</label>
+                        </button>
+                        <button style="--sel-bg-color: #fc4f13;">
+                            <input type="radio" id="select-fw-html" name="framework" value="html"/>
+                            <label for="select-fw-html">Todo</label>
+                        </button>
+                        <div style="background-color: #0769ad;">Games</div>
+                        <button style="--sel-bg-color: #fc4f13;">
+                            <input type="radio" id="select-fw-html" name="framework" value="html"/>
+                            <label for="select-fw-html">Simon Says</label>
+                        </button>
+                        <div style="background-color: #dd0031;">Serious</div>
+                        <div id="hidden-meow"></div>
+                    </menu>
                 </div>
-                <noscript>
-                    You do need scripts / js enabled for this site to work
-                </noscript>
-                <div></div>
+                <div class="content">
+                    <iframe id="iframe" src="src/html-src/counter.html">
+    
+                    </iframe>
+                    <div id="perf-bar">
+                    Performance Bar
+                        <div id="colors"></div>
+                    </div>
+                    <div></div>
+                </div>
             </div>
-            
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <section>
-            <h3>What is this?</h3>
-            Didn't the <a href="#first-header">first header</a> tell you?
-        </section>
-        <section>
-            <h3>Does each mini-app share resources with one another?</h3>
-            Absolutely not. Each is completely self contained
-        </section>
-        <section>
-            <h3>Oh cool! So I can pick use this to pick to the best framework?</h3>
-            <br>
-            When it comes to JavaScript frameworks, there's really no definitive "best" choice because each one has its own strengths and is suited for different projects and development styles. React is great for building dynamic user interfaces with its component-based architecture, Vue.js is a favorite for its flexibility and how easily it integrates into existing projects, and Svelte shines with its performance benefits by compiling components into super-optimized vanilla JavaScript. Each of these frameworks brings something unique to the table, making them better suited for different kinds of projects and development teams. Ultimately, the best framework depends on your project's specific needs, your team's expertise, and the workflow you're aiming for, making the choice subjective and context-dependent.
-        </section>
-        <section>
-            <h3>What about the website itself?</h3>
-            Vanilla, duh. It's not that complicated to begin with
-        </section>
+        <div class="mostly-text">
+            <section>
+                <h3>What is this?</h3>
+                Didn't the <a href="#first-header">first header</a> tell you?
+            </section>
+            <section>
+                <h3>Does each mini-app share resources with one another?</h3>
+                Absolutely not. Each is completely self contained
+            </section>
+            <section>
+                <h3>Oh cool! So I can pick use this to pick to the best framework?</h3>
+                <br>
+                When it comes to JavaScript frameworks, there's really no definitive "best" choice because each one has its own strengths and is suited for different projects and development styles. React is great for building dynamic user interfaces with its component-based architecture, Vue.js is a favorite for its flexibility and how easily it integrates into existing projects, and Svelte shines with its performance benefits by compiling components into super-optimized vanilla JavaScript. Each of these frameworks brings something unique to the table, making them better suited for different kinds of projects and development teams. Ultimately, the best framework depends on your project's specific needs, your team's expertise, and the workflow you're aiming for, making the choice subjective and context-dependent.
+            </section>
+            <section>
+                <h3>What about the website itself?</h3>
+                Vanilla, duh. It's not that complicated to begin with
+            </section>
+        </div>
         <footer>
             <div>Text is authored with the help of ChatGPT(because I do not trust my own opinions about frameworks), though definitely not written entirely by it</div>
         </footer>

@@ -1,12 +1,11 @@
-// import { createRoot } from 'react-dom/client';
-// import React from 'react';
-
 let appContainer = document.getElementById("mini-app-container")
 let frameworkLink = document.querySelector("#framework-link")
 let frameworkRepo = document.querySelector("#framework-repo")
 function switchSelectedFramework() {
     
 }
+
+  
 document
 .querySelectorAll("#select-framework > menu > button")
 .forEach(e => e.onclick = () => 
@@ -24,6 +23,23 @@ document
 /** @type {HTMLIFrameElement} */
 const iframe = document.getElementById("iframe");
 iframe.contentWindow.helloworld = () => {alert('hey this works')}
+const content = document.getElementById("mini-app-container");
+document.addEventListener(
+    "keydown",
+    (e) => {
+      if (e.key === "Enter") {
+        toggleFullScreen();
+      }
+    },
+    false,
+  );
+  function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      content.requestFullscreen();
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
 let frameworkInfo = {
     "react": {
         desc: "A framework by Facebook",
@@ -96,9 +112,9 @@ let frameworkInfo = {
         repo: "https://github.com/vanjs-org/van"
     },
 }
+document.getElementById("hidden-meow").innerHTML = "&nbsp&nbsp／l、<br>（ﾟ､ ｡ ７   Meow<br>⠀ l、ﾞ ~ヽ<br>  じしf_, )ノ"
 //Grab source folder for each framework
 //There should be a singular script for getting each mini-app
-
 // Clear the existing HTML content
 // document.body.innerHTML = '<div id="app"></div>';
 console.log("hello world")

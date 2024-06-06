@@ -241,14 +241,19 @@ menu.app {
     flex-direction: row;
     flex-wrap: nowrap;
     & .clip-menu {
-        height: 100%;
         overflow: auto;
         min-width: 200px;
         flex-grow: 1;
         /* flex-shrink: 1; */
-        
+        position: relative;
     }
 }
+menu.app {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
 #hidden-meow {
     position: absolute;
     bottom: 0px;

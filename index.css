@@ -107,7 +107,6 @@ menu.framework {
     display: flex;
     overflow-x: scroll;
     overflow-y: visible;
-    
     padding: 0;
     margin: 0;
     width: 100%;
@@ -242,6 +241,7 @@ menu.app {
     flex-direction: row;
     flex-wrap: nowrap;
     & .clip-menu {
+        height: 100%;
         overflow: auto;
         min-width: 200px;
         flex-grow: 1;

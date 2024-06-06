@@ -19,11 +19,14 @@ document
         frameworkLink.lastElementChild.textContent = cutLink
         appContainer.style.setProperty('--sel-repo-char-count', selectedFrameworkData.repo.length)
         frameworkRepo.firstElementChild.textContent = selectedFrameworkData.repo
+        document.getElementById('framework-motto').textContent = `- ${selectedFrameworkData.motto}`
+        document.getElementById('framework-desc').textContent = selectedFrameworkData.desc
     })
 /** @type {HTMLIFrameElement} */
 const iframe = document.getElementById("iframe");
 iframe.contentWindow.helloworld = () => {alert('hey this works')}
 const content = document.getElementById("mini-app-container");
+//TODO: full screen snippet; adapt later
 document.addEventListener(
     "keydown",
     (e) => {
@@ -78,13 +81,14 @@ let frameworkInfo = {
         repo: "https://github.com/preactjs/preact"
     },
     "svelte": {
-        desc: "A framework by Facebook",
+        desc: "A framework that's also not a framework, as it instead compiles your code",
         motto: "Cybernetically enhanced web apps",
         link: "https://svelte.dev/",
         repo: "https://github.com/sveltejs/svelte"
     },
     "mithril": {
         desc: "A framework by Facebook",
+        motto: "A JavaScript Framework for Building Brilliant Applications",
         link: "https://mithril.js.org/",
         repo: "https://github.com/MithrilJS/mithril.js"
     },
@@ -100,13 +104,13 @@ let frameworkInfo = {
         repo: "https://chromium.googlesource.com/v8/v8.git"
     },
     "alpine": {
-        desc: "A framework by Facebook",
+        desc: "A JavaScript library that takes a different approach and instead separates logic into your markup",
         motto: "Your new, lightweight, JavaScript framework",
         link: "https://alpinejs.dev/",
         repo: "https://github.com/alpinejs/alpine"
     },
     "vanjs": {
-        desc: "A framework by Facebook",
+        desc: "Another React copycat, with a bunch of hacks",
         motto: "A 1.0kB Grab 'n Go Reactive UI Framework without React/JSX",
         link: "https://vanjs.org/",
         repo: "https://github.com/vanjs-org/van"

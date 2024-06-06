@@ -1,31 +1,31 @@
-hello world     :Static     //A simple hello world document
-about me page
-documentation
-article
-hello universe  :Dynamic
-counter                     //A button that counts up with every click!
-catalog
-node graph
-calculator                  //A calculator app that simulates a real pocket calculator!
-autocompleter
-infinite scroller
-minesweeper     :Game
-snake
-tic tac toe
+Hello World         :Static #f0db4f //A simple hello world document
+About Me
+Documentation
+Article
+Hello Universe      :Dynamic #42b883
+Counter                             //A button that counts up with every click!
+Catalog
+Node Graph
+Calculator                          //A calculator app that simulates a real pocket calculator!
+Autocompleter
+Infinite Scroller
+Minesweeper         :Game #0769ad
+Snake
+Tic Tac Toe
 2048
-simon says
-chess
-fruit ninja
-osu
-bullet hell
-scorched earth
-solitaire
-flappy bird
-word search
-SPA             :Serious
-paint app                   //MS Paint!
-goodmorning
-recursive stopwatch         //A timer that allows you to start new stopwatches within the current running one 
+Simon Says
+Chess
+Fruit Ninja
+Osu
+Bullet Hell
+Scorched Earth
+Solitaire
+Flappy Bird
+Word Search
+SPA                 :Serious #dd0031
+Paint                               //MS Paint!
+Good Morning
+Recursive Stopwatch                 //A timer that allows you to start new stopwatches within the current running one 
 
 
 

@@ -1,0 +1,9 @@
+{{#app}}
+{{#if section}}
+<div class="section" style="background-color: {{color}};z-index: {{@index}};">{{section}}</div>
+{{/if}}
+<button>
+    <input type="radio" id="select-app-{{shorthand}}" name="mini-app" value="{{shorthand}}"/>
+    <label for="select-app-{{shorthand}}">{{name}}</label>
+</button>
+{{/app}}

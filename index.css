@@ -216,7 +216,7 @@ blockquote {
     }
 }
 menu.app {
-    position: relative;
+    position: absolute;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -229,10 +229,14 @@ menu.app {
     background-color: #0008;
     & button {
         font-size: large;
-        min-height: 12em;
+        min-height: 2em;
     }
     & div {
         
+    }
+    & .section {
+        position: sticky;
+        top: 0px;
     }
 }
 .app-div {
@@ -247,11 +251,6 @@ menu.app {
         /* flex-shrink: 1; */
         position: relative;
     }
-}
-menu.app {
-    position: absolute;
-    height: 100%;
-    width: 100%;
 }
 
 #hidden-meow {

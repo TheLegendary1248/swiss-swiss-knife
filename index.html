@@ -22,20 +22,9 @@
         <h2>
             <span>A <span class="fixed">handful</span> of mini-apps</span>,<br>
             <span>written in a<span class="fixed" style="visibility: hidden;">handful</span> of frameworks</span></h2>
-        <noscript>
-            <p>React <a href="">Website</a> <a>Repo</a></p>
-            <p>Vue <a href="" >Website</a> <a>Repo</a></p>
-            <p>Preact <a href="" >Website</a> <a>Repo</a></p>
-            <p>Mithril <a href="" >Website</a> <a>Repo</a></p>
-            <p>HTML <a href="" >Website</a> <a>Repo</a></p>
-            <p>JQuery <a href="" >Website</a> <a>Repo</a></p>
-            <p>Vanilla <a href="" >Website</a> <a>Repo</a></p>
-            <p>Angular <a href="" >Website</a> <a>Repo</a></p>
-            <p>Svelte <a href="" >Website</a> <a>Repo</a></p>
-            <p>Ember <a href="" >Website</a> <a>Repo</a></p>
-            <p>VanJS <a href="" >Website</a> <a>Repo</a></p>
-            <p>Alpine <a href="" >Website</a> <a>Repo</a></p>
-        </noscript>
+        <div>
+            {{> noscript}}
+        </div>
         <noscript id="no-script-prompt">
             <span>[tl1248@arch swiss-swiss-knife]$</span> neofetch
             <br>
@@ -73,7 +62,7 @@
                         <input type="radio" id=" select-fw-jquery" name="framework" value="jquery"/>
                         <label for="select-fw-jquery">JQuery</label>
                     </button>
-                    <button style="--sel-bg-color: #f0db4f; --sel-color: #323330">
+                    <button style="--sel-bg-color: #f0db4f; --sel-color: #323330;">
                         <input type="radio" id="select-fw-vanilla" name="framework" value="vanilla"/>
                         <label for="select-fw-vanilla">Vanilla</label>
                     </button>
@@ -117,28 +106,9 @@
             </div>
             <div class="app-div">
                 <div class="clip-menu">
+                    <div id="hidden-meow"></div>
                     <menu class="app">
-                        <div style="background-color: #f0db4f;">Static</div>
-                        <button style="--sel-bg-color: #fc4f13;">
-                            <input type="radio" id="select-fw-html" name="framework" value="html"/>
-                            <label for="select-fw-html">About Me</label>
-                        </button>
-                        <div>Dynamic</div>
-                        <button style="--sel-bg-color: #fc4f13;">
-                            <input type="radio" id="select-fw-html" name="framework" value="html"/>
-                            <label for="select-fw-html">Counter</label>
-                        </button>
-                        <button style="--sel-bg-color: #fc4f13;">
-                            <input type="radio" id="select-fw-html" name="framework" value="html"/>
-                            <label for="select-fw-html">Todo</label>
-                        </button>
-                        <div style="background-color: #0769ad;">Games</div>
-                        <button style="--sel-bg-color: #fc4f13;">
-                            <input type="radio" id="select-fw-html" name="framework" value="html"/>
-                            <label for="select-fw-html">Simon Says</label>
-                        </button>
-                        <div style="background-color: #dd0031;">Serious</div>
-                        <div id="hidden-meow"></div>
+                        {{> mini-apps}}
                     </menu>
                 </div>
                 <div class="content">

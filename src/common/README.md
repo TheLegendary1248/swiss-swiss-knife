@@ -1,0 +1,1 @@
+This should contain data that should be fetched as a sort of dummy or common data between apps

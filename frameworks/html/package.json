@@ -1,0 +1,17 @@
+{
+  "name": "swiss-swiss-knife-html",
+  "version": "1.0.0",
+  "description": "HTML version of swiss-swiss-knife apps",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo 'You're funny'",
+    "build": "node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tl1248",
+  "license": "MIT",
+  "dependencies": {
+    "@minify-html/node": "^0.15.0",
+    "html-minifier": "^4.0.0"
+  }
+}

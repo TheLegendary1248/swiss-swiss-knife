@@ -4,13 +4,13 @@ import framework from './src/frameworks.json'
 import str from './catalog.txt'
 import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
+//catalog.txt transformer for handlebars
 let transformFramework = Object.entries(framework)
 .map(
   x => Object.assign(x[1], {shorthand: x[0]})
 )
 /**@type {String} */
 let transformStr = str.split('//GOAL')[0]
-let incrementalZIndex = 1
 transformStr = transformStr.split('\n')
 transformStr = transformStr.filter(e => e.trim() !== "")
 transformStr = transformStr.map(e => {
@@ -28,6 +28,7 @@ transformStr = transformStr.map(e => {
     desc: desc
   }
 })
+//Config
 export default defineConfig({
   apptype: "mpa",
   plugins: [handlebars({

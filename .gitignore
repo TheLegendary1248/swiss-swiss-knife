@@ -2,3 +2,4 @@
 *.temp.*
 # Ideally 
 /public/app-builds 
+/dist

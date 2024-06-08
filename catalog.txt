@@ -31,3 +31,4 @@ Recursive Stopwatch                 //A timer that allows you to start new stopw
 
 //GOAL
 sudoku          :Removed Considerations //Soduko is plenty more complicated than I anticipated
+//  --NOTE-- THIS FILE IS ACTUALLY USED AS PART OF THE SOURCE. ALTER AFTER YOU'VE REVIEWED ~/vite.config.mjs

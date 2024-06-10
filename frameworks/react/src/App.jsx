@@ -1,14 +1,16 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
+function App(ohno) {
   const [count, setCount] = useState(0)
+  const ref = useRef(4)
 
   return (
     <>
       <div>
+        {ohno ? JSON.stringify(ohno) : null}
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -18,7 +20,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 10)}>
+        <button onClick={() => setCount((count) => count + 10 + (ohno * ref.current))}>
           count is {count}
         </button>
         <p>
